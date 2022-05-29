@@ -1,7 +1,10 @@
 {
   "name": "client",
   "version": "0.1.0",
-  "private": true,
+  "private": true, 
+  "engines": {
+    "node": "16.x"
+  }, 
   "dependencies": {
     "@tensorflow-models/blazeface": "0.0.7",
     "@tensorflow-models/handpose": "0.0.7",
