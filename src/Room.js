@@ -358,8 +358,8 @@ function Room(props) {
       } else if (p5.keyIsDown(27)) {
         tempUsers[idx].quit = true;
       }
-      if (keypressed == false) {
-        if (users[idx].quit == false) {
+      if (keypressed === false) {
+        if (users[idx].quit === false) {
           p5.image(img, users[idx].x, users[idx].y);
         }
       }
@@ -383,18 +383,18 @@ function Room(props) {
       if (i === userNum) {
         continue;
       }
-      if (twoLeft == true) {
-        if (users[i].quit == true) {
+      if (twoLeft === true) {
+        if (users[i].quit === true) {
           continue;
         }
-        if (users.length == 3) {
-          if (users[i].direction == "w") {
+        if (users.length === 3) {
+          if (users[i].direction === "w") {
             p5.image(imggb, users[i].x, users[i].y);
-          } else if (users[i].direction == "s") {
+          } else if (users[i].direction === "s") {
             p5.image(imggf, users[i].x, users[i].y);
-          } else if (users[i].direction == "a") {
+          } else if (users[i].direction === "a") {
             p5.image(imggl, users[i].x, users[i].y);
-          } else if (users[i].direction == "d") {
+          } else if (users[i].direction === "d") {
             p5.image(imggr, users[i].x, users[i].y);
           } else {
             p5.image(imgg, users[i].x, users[i].y);
@@ -410,56 +410,56 @@ function Room(props) {
         }
         continue;
       }
-      if (colorSet[i] == "g") {
-        if (users[i].direction == "w") {
+      if (colorSet[i] === "g") {
+        if (users[i].direction === "w") {
           p5.image(imggb, users[i].x, users[i].y);
-        } else if (users[i].direction == "s") {
+        } else if (users[i].direction === "s") {
           p5.image(imggf, users[i].x, users[i].y);
-        } else if (users[i].direction == "a") {
+        } else if (users[i].direction === "a") {
           p5.image(imggl, users[i].x, users[i].y);
-        } else if (users[i].direction == "d") {
+        } else if (users[i].direction === "d") {
           p5.image(imggr, users[i].x, users[i].y);
         } else {
           p5.image(imgg, users[i].x, users[i].y);
         }
         continue;
       }
-      if (colorSet[i] == "o") {
-        if (users[i].direction == "w") {
+      if (colorSet[i] === "o") {
+        if (users[i].direction === "w") {
           p5.image(imgob, users[i].x, users[i].y);
-        } else if (users[i].direction == "s") {
+        } else if (users[i].direction === "s") {
           p5.image(imgof, users[i].x, users[i].y);
-        } else if (users[i].direction == "a") {
+        } else if (users[i].direction === "a") {
           p5.image(imgol, users[i].x, users[i].y);
-        } else if (users[i].direction == "d") {
+        } else if (users[i].direction === "d") {
           p5.image(imgor, users[i].x, users[i].y);
         } else {
           p5.image(imgo, users[i].x, users[i].y);
         }
         continue;
       }
-      if (users.length == 2) {
-        if (users[i].direction == "w") {
+      if (users.length === 2) {
+        if (users[i].direction === "w") {
           p5.image(imggb, users[i].x, users[i].y);
-        } else if (users[i].direction == "s") {
+        } else if (users[i].direction === "s") {
           p5.image(imggf, users[i].x, users[i].y);
-        } else if (users[i].direction == "a") {
+        } else if (users[i].direction === "a") {
           p5.image(imggl, users[i].x, users[i].y);
-        } else if (users[i].direction == "d") {
+        } else if (users[i].direction === "d") {
           p5.image(imggr, users[i].x, users[i].y);
         } else {
           p5.image(imgg, users[i].x, users[i].y);
         }
       } else if (users.length > 2) {
-        if (greenUsed == false) {
+        if (greenUsed === false) {
           colorSet[i] = "g";
-          if (users[i].direction == "w") {
+          if (users[i].direction === "w") {
             p5.image(imggb, users[i].x, users[i].y);
-          } else if (users[i].direction == "s") {
+          } else if (users[i].direction === "s") {
             p5.image(imggf, users[i].x, users[i].y);
-          } else if (users[i].direction == "a") {
+          } else if (users[i].direction === "a") {
             p5.image(imggl, users[i].x, users[i].y);
-          } else if (users[i].direction == "d") {
+          } else if (users[i].direction === "d") {
             p5.image(imggr, users[i].x, users[i].y);
           } else {
             p5.image(imgg, users[i].x, users[i].y);
@@ -467,13 +467,13 @@ function Room(props) {
           greenUsed = true;
         } else {
           colorSet[i] = "o";
-          if (users[i].direction == "w") {
+          if (users[i].direction === "w") {
             p5.image(imgob, users[i].x, users[i].y);
-          } else if (users[i].direction == "s") {
+          } else if (users[i].direction === "s") {
             p5.image(imgof, users[i].x, users[i].y);
-          } else if (users[i].direction == "a") {
+          } else if (users[i].direction === "a") {
             p5.image(imgol, users[i].x, users[i].y);
-          } else if (users[i].direction == "d") {
+          } else if (users[i].direction === "d") {
             p5.image(imgor, users[i].x, users[i].y);
           } else {
             p5.image(imgo, users[i].x, users[i].y);
@@ -500,7 +500,7 @@ function Room(props) {
   useEffect(
     () => {
       let idx = users.findIndex((user) => user.id === socket.id);
-      if (users[idx] != undefined) {
+      if (users[idx] !== undefined) {
         tempFine = true;
       }
       console.log(tempFine);
